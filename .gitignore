@@ -1,0 +1,56 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.env
+*.egg-info/
+dist/
+build/
+
+# Node
+node_modules/
+
+# IDE
+.vs/
+.vscode/
+*.user
+
+# 大文件/敏感文件
+*.pdf
+*.docx
+*.pptx
+*.xlsx
+*.png
+*.jpg
+*.mp4
+*.zip
+
+# 临时文件
+*.tmp
+*.log
+*.lck
+
+# 工作目录
+bp-analyzer-workspace/
+bp-ansys/
+aerospace-research/
+hardware_research/
+silicon-photonics-research/
+media_notes/
+wechat-build/
+gomoku-game.html
+gomoku-v2.html
+gomoku-v3.html
+gomoku-wechat.html
+sort.html
+sudoku.html
+react.min.js
+setup_tasks.ps1
+build_gomoku.py
+今日技术情报.md
+提示词汇总-hh.txt
+embodied_ai_research.py
+bp-agent.py
+media_notes_agent.py
+send_feishu.py
+send_feishu_payload.json

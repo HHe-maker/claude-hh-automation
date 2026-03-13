@@ -1,0 +1,30 @@
+name: Daily Podcast Push
+
+on:
+  schedule:
+    # 每天 UTC 14:00 = 北京时间 22:00
+    - cron: '0 14 * * *'
+  workflow_dispatch:
+    # 支持手动触发（用于测试）
+
+jobs:
+  push-podcast:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install -r podcast_daily/requirements.txt
+
+      - name: Run podcast collector
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python podcast_daily/podcast_collector.py
